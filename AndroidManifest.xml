@@ -42,10 +42,10 @@
 			</intent-filter>
 		</receiver>
 		<receiver
-            android:name="com.example.itemtest.craving.RecordingReceiver"
+            android:name="com.example.itemtest.RecordingReceiver"
             android:exported="false" >
             <intent-filter>
-                <action android:name="com.example.itemtest.craving.ACTION_RECORD" />
+                <action android:name="com.example.itemtest.ACTION_RECORD" />
             </intent-filter>
         </receiver>
     </application>

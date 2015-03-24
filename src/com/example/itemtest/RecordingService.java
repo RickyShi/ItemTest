@@ -1,7 +1,5 @@
 package com.example.itemtest;
 
-import java.io.IOException;
-
 import android.app.Service;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -10,7 +8,6 @@ import android.os.IBinder;
 
 public class RecordingService extends Service {
 
-	private String connection;
 	BatteryInfoBroadcastReceiver batteryBroadcast;
 
 	@Override
@@ -18,15 +15,6 @@ public class RecordingService extends Service {
 		super.onCreate();
 		batteryBroadcast = new BatteryInfoBroadcastReceiver();
 		this.registerReceiver(batteryBroadcast, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-
-		// need to use alarm manager later
-		connection = Util.getConnectionState(getApplicationContext());
-		try {
-			Util.writeToFile("test.txt", "Connection: " + connection);
-			Util.writeToFile("test.txt", "Battery: " + Util.curBatt);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	@Override

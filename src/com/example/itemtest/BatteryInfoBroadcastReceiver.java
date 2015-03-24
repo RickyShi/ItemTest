@@ -14,8 +14,8 @@ public class BatteryInfoBroadcastReceiver extends BroadcastReceiver {
 		if (Intent.ACTION_BATTERY_CHANGED.equals(intent.getAction())) {
 			int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
 			int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-			Util.curBatt = String.valueOf(level * 100 / scale);
-			Log.d("BatteryInfoBroadcastReceiver", Util.curBatt);
+			Utilities.curBatt = String.valueOf(level * 100 / scale);
+			Log.d("BatteryInfoBroadcastReceiver", Utilities.curBatt);
 		}
 
 	}

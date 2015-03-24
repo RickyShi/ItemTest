@@ -13,10 +13,6 @@ import android.view.ViewGroup;
 
 public class MainActivity extends Activity {
 
-
-	private String connection;
-	private String battery;
-	BatteryInfoBroadcastReceiver batteryBroadcast;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,7 +24,7 @@ public class MainActivity extends Activity {
 					.commit();
 		}
 
-		Util.scheduleRecording(MainActivity.this);
+		Utilities.scheduleRecording(MainActivity.this);
 		Intent i = new Intent(MainActivity.this, RecordingService.class);
 		startService(i);
 
