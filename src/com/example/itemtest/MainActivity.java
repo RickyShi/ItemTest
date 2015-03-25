@@ -24,9 +24,9 @@ public class MainActivity extends Activity {
 					.commit();
 		}
 
-		Utilities.scheduleRecording(MainActivity.this);
 		Intent i = new Intent(MainActivity.this, RecordingService.class);
 		startService(i);
+		Utilities.scheduleRecording(MainActivity.this);
 
 	}
 
